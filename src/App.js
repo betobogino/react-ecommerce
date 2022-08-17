@@ -1,9 +1,9 @@
 import './App.css';
-import Card from './components/Card'
+import Navbar from '../src/components/Navbar';
 
 function App() {
   return (
-    <Card></Card>
+    <Navbar></Navbar>
   );
 }
 
