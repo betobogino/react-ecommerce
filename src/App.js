@@ -1,9 +1,10 @@
 import './App.css';
-import Navbar from '../src/components/Navbar';
+//import {NavbarCustom} from '../src/components/Navbar/NavbarCustom';
+import { Header } from './components/Header/Header';
 
 function App() {
   return (
-    <Navbar></Navbar>
+    <Header />
   );
 }
 

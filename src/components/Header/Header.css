@@ -1,0 +1,26 @@
+header{
+    background-color: #fff159;
+}
+.rowHeaderTop{
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: .5rem;
+}
+.rowHeaderTop-logo{
+    width: 15% !important;
+}
+.rowHeaderTop-search{
+    width: 50% !important;
+}
+.rowHeaderTop-disney{
+    width: 35% !important;
+}
+img{
+    width: 100% !important;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
