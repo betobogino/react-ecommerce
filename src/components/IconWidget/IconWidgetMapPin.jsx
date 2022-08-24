@@ -1,7 +1,7 @@
-import {BsPinMap} from 'react-icons/bs'
+import {RiMapPinLine} from 'react-icons/ri'
 
 export const IconWidgetMapPin = () => {
     return (
-        <BsPinMap />
+        <RiMapPinLine />
     );
 } 

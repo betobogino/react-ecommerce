@@ -10,6 +10,8 @@ import { IconWidgetMapPin } from '../IconWidget/IconWidgetMapPin';
 import NavDropdown from './NavDropdown';
 
 import './NavbarCustom.css';
+import { AddressSend } from '../AddressSend/AddressSend';
+import { ItemListContainer } from '../ItemListContainer/ItemListContainer';
 
 const linksCategories = [
 	'Ofertas',
@@ -41,10 +43,8 @@ export const NavbarCustom = () => {
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav'>
 					<Nav>
-						<NavLink className="navLinkSend">
-							<IconWidgetMapPin />
-							<span>Enviar a Alberto</span>
-							<span>España 235</span>
+						<NavLink>
+							<AddressSend name="Alberto" address="España 235"/>
 						</NavLink>
 					</Nav>
 					<Nav className='me-auto'>

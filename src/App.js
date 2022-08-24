@@ -1,10 +1,15 @@
 import './App.css';
-//import {NavbarCustom} from '../src/components/Navbar/NavbarCustom';
 import { Header } from './components/Header/Header';
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer'
 
 function App() {
   return (
-    <Header />
+    <>
+      <Header />
+      <main>
+        <ItemListContainer />
+      </main>
+    </> 
   );
 }
 
