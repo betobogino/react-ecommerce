@@ -5,13 +5,11 @@ import Navbar from 'react-bootstrap/Navbar';
 
 import { IconWidgetCart } from '../IconWidget/IconWidgetCart';
 import { IconWidgetBell } from '../IconWidget/IconWidgetBell';
-import { IconWidgetMapPin } from '../IconWidget/IconWidgetMapPin';
 
 import NavDropdown from './NavDropdown';
 
 import './NavbarCustom.css';
 import { AddressSend } from '../AddressSend/AddressSend';
-import { ItemListContainer } from '../ItemListContainer/ItemListContainer';
 
 const linksCategories = [
 	'Ofertas',

@@ -7,15 +7,21 @@
     display: flex;
     justify-content: center;
     padding: 1rem 0;
+    flex-wrap: wrap;
 }
 .item {
-    width: 20%;
+    width: 19%;
+    margin: .5% .5%;
 }
 .item:hover {
     transform: scale(1.02);
     cursor: pointer;
     border-bottom-left-radius: .5rem;
     border-bottom-right-radius: .5rem;
+}
+.itemImage img{
+    height: 224px;
+    width: 224px;
 }
 .item div:nth-child(2){
     display: flex;

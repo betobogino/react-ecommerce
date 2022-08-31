@@ -4,11 +4,11 @@ const onAddCart = (amount) => {
     console.log(`Agregar al cart ${amount} unidades`)
 }
 
-export const Item = ({price, name}) => {
+const Item = ({price, name, urlImage}) => {
     return (
         <div className='item'>
             <div className="itemImage">
-                <img src="assets/img/auriculares.jpg" alt="" />
+                <img src={urlImage} alt="" />
             </div>
             <div className="itemInfo">
                 <span>{price}</span>
@@ -19,3 +19,5 @@ export const Item = ({price, name}) => {
         </div>
     ); 
 }
+
+export default Item;
