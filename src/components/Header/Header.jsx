@@ -9,7 +9,7 @@ import InputGroup from "react-bootstrap/InputGroup"
 
 import './Header.css';
 
-export const Header = () => {
+const Header = () => {
     return (
         <header>
             <Container>
@@ -36,3 +36,5 @@ export const Header = () => {
         </header>
     );
 }
+
+export default Header;
