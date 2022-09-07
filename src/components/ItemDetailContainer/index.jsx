@@ -10,22 +10,22 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     getProductDetail()
       .then((productDetail) => {
-        console.log(productDetail)
         setDetails(productDetail)
       })
-  }, [details]);
+  }, []);
 
   const getProductDetail = () => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(productsJS.find((product) => product.id === 1))
+        resolve(productsJS.find((product) => product.id === 9))
       }, 2000)
     })
   }
   
   return (
     <div className="itemDetailContainer">
-      <ItemDetail title={details.title} price={details.price} brand={details.brand} model={details.model} stock={details.stock}/>
+      <ItemDetail info={details}/>
+      {/* <ItemDetail title={details.title} price={details.price} brand={details.brand} model={details.model} stock={details.stock}/> */}
     </div>
   );
 }

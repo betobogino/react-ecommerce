@@ -1,4 +1,29 @@
 .itemDetailContainer {
-    border: 1px solid;
-    border-radius: 1rem;
+    height: 100%;
+    padding: 5rem 6rem;
+}
+.itemDetail {
+    border-radius: .5rem;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+.itemDetailImg {
+    width: 40%;
+} 
+.itemDetailImg div {
+    padding: 1rem;
+}
+.itemDetailInfo,
+.itemDetailBtn {
+    width: 30%;
+}
+.itemDetailInfo {
+    
+} 
+.itemDetailBtn {
+    border: 1px solid #ebebeb;
+    border-radius: .5rem;
+    padding: .5rem;
 }
