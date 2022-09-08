@@ -7,7 +7,7 @@ const getProducts = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(productsJS)
-        }, 2000)
+        }, 1000)
     })
 }
 

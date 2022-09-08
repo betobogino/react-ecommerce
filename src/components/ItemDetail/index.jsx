@@ -5,7 +5,8 @@ const onAddCart = (amount) => {
 }
 
 const ItemDetail = (info) => {
-  const {id, title, description, brand, model, price, stock, imageUrl, details} = info.info
+  console.log("info: ",info)
+  const {id, title, description, brand, model, price, stock, imageUrl, details} = info?.info
   
   return (
     <div className="itemDetail">

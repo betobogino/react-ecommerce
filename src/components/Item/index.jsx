@@ -1,11 +1,10 @@
 import { Link, useParams } from "react-router-dom"
 
-const Item = ({price, name, urlImage}) => {
-    const params = useParams();
-
+const Item = ({id, price, name, urlImage}) => {
+    
     return (
         <div className='item'>
-            <Link to={"/detail/"+params.id}>
+            <Link to={"/detail/"+id}>
                 <div className="itemImage">
                     <img src={urlImage.main} alt="" />
                 </div>
