@@ -29,14 +29,14 @@ const ItemDetail = (info) => {
           </div>
         </div>
         <ul>
-          {details.map(detail => { 
+          {details?.map(detail => { 
             return <li>{detail}</li>    
           })}
         </ul>
       </div>
       <div className="itemDetailBtn">
         <p>Stock disponible: {stock}</p>
-        <Counter stock={5} initial={1} onAdd={onAddCart}></Counter> 
+        <Counter stock={stock} initial={1} onAdd={onAddCart}></Counter> 
       </div>         
     </div>
   )

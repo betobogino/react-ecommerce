@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 import ItemDetail from "../ItemDetail/";
 import productsJS from "../../assets/utils/products.js";
@@ -6,6 +7,7 @@ import "./index.css"
 
 const ItemDetailContainer = () => {
   const [details, setDetails] = useState([]);
+  const idProduct = useParams();
 
   useEffect(() => {
     getProductDetail()
@@ -17,7 +19,7 @@ const ItemDetailContainer = () => {
   const getProductDetail = () => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(productsJS.find((product) => product.id === 9))
+        resolve(productsJS.find((product) => product.id === idProduct))
       }, 2000)
     })
   }
@@ -25,7 +27,6 @@ const ItemDetailContainer = () => {
   return (
     <div className="itemDetailContainer">
       <ItemDetail info={details}/>
-      {/* <ItemDetail title={details.title} price={details.price} brand={details.brand} model={details.model} stock={details.stock}/> */}
     </div>
   );
 }
