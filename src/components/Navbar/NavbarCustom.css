@@ -1,0 +1,9 @@
+.navLink {
+    margin: 0 10px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.55); 
+}
+.navLink:hover {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.55); 
+}

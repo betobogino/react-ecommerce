@@ -4,15 +4,13 @@ const onAddCart = (amount) => {
     console.log(`Agregar al cart ${amount} unidades`)
 }
 
-const ItemDetail = (info) => {
-  console.log("info: ",info)
-  const {id, title, description, brand, model, price, stock, imageUrl, details} = info?.info
+const ItemDetail = ({title, price, stock, imageUrl, details}) => {
   
   return (
     <div className="itemDetail">
       <div className="itemDetailImg">
         <div>
-          <img src={imageUrl?.main} alt={title} />  
+          <img src={"../"+imageUrl?.main} alt={title} />  
         </div>
       </div>
       <div className="itemDetailInfo">
@@ -30,8 +28,8 @@ const ItemDetail = (info) => {
           </div>
         </div>
         <ul>
-          {details?.map(detail => { 
-            return <li>{detail}</li>    
+          {details?.map((detail, index) => { 
+            return <li key={index}>{detail}</li>    
           })}
         </ul>
       </div>

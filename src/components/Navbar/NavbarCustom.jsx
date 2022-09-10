@@ -2,26 +2,23 @@ import { NavLink } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
 import { IconWidgetCart } from '../IconWidget/IconWidgetCart';
 import { IconWidgetBell } from '../IconWidget/IconWidgetBell';
-
-import NavDropdown from './NavDropdown';
-
-import './NavbarCustom.css';
 import { AddressSend } from '../AddressSend/AddressSend';
 
+import { Link } from 'react-router-dom';
+
+import './NavbarCustom.css';
+
 const linksCategories = [
-	'Ofertas',
-	'Historial',
-	'Supermercado',
-	'Moda',
-	'Vender',
-	'Ayuda',
+	'Teclados',
+	'Mouses',
+	'Procesadores',
+	'Notebooks',
 ];
 
 const navCategories = linksCategories.map((link, index) => {
-	return <NavLink key={index}>{link}</NavLink>;
+	return <Link className='navLink' to={"/detail/"} key={index}>{link}</Link>;
 });
 
 const linksProfile = [
@@ -46,7 +43,6 @@ export const NavbarCustom = () => {
 						</NavLink>
 					</Nav>
 					<Nav className='me-auto'>
-						<NavDropdown></NavDropdown>
 						<Nav>{navCategories}</Nav>
 					</Nav>
 					<Nav>
