@@ -1,20 +1,20 @@
-import './ItemListContainer.css'
-import ItemList from '../ItemList/'
+import './ItemListContainer.css';
+import ItemList from '../ItemList/';
 import productsJS from '../../assets/utils/products'
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 import { PropagateLoader } from "react-spinners";
-
-const getProducts = () => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(productsJS)
-        }, 2000)
-    })
-}
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
+
+    const getProducts = () => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(productsJS)
+          }, 2000)
+        })
+    }
 
     useEffect(() => {
         getProducts()
