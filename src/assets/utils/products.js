@@ -18,7 +18,7 @@ const products = [
             "USB:Chapado en oro",
             "Dimensiones:451 X 150 X 41 MM"
         ],
-        category: "keyboard"
+        category: 1
     },
     {
         id : 2, 
@@ -45,7 +45,7 @@ const products = [
             "Indispensable para tus actividades.",
             "Las imágenes pueden ser ilustrativas.",
         ],
-        category: "keyboard"
+        category: 1
     },
     {
         id : 3, 
@@ -72,7 +72,7 @@ const products = [
             "Incluye lector de tarjeta de memoria.",
             "Modo de sonido Stereo.",
         ],
-        category: "notebook"
+        category: 4
     },
     {
         id : 4, 
@@ -97,7 +97,7 @@ const products = [
             "Producto en empaque original.",
             "Procesador innovador desarrollado bajo altos estándares de calidad."
         ],
-        category: "processor"
+        category: 3
     },
     {
         id : 5, 
@@ -122,7 +122,7 @@ const products = [
             "Producto en empaque original.",
             "Procesador innovador desarrollado bajo altos estándares de calidad."
         ],
-        category: "processor"
+        category: 3
     },
     {
         id : 6, 
@@ -149,7 +149,7 @@ const products = [
             "Formatos de conexión: 2 HDMI 2.1, 3 DisplayPort 1.4a.",
             "Incluye accesorios.",
         ],
-        category: "videoCard"
+        category: 5
     },
     {
         id : 7, 
@@ -177,7 +177,7 @@ const products = [
             "Permite la conexión de hasta 3 pantallas simultáneas.",
             "Formatos de conexión: HDMI 2.0b, DisplayPort 1.4, DL-DVI-D.",
         ],
-        category: "videoCard"
+        category: 5
     },
     {
         id : 8, 
@@ -206,7 +206,7 @@ const products = [
             "Creado para llevar a todas partes.",
             "Control inteligente y navegación fácil.",
         ],
-        category: "mouse"
+        category: 2
     },
     {
         id : 9, 
@@ -234,7 +234,7 @@ const products = [
             "Creado para llevar a todas partes.",
             "Control inteligente y navegación fácil.",
         ],
-        category: "mouse"
+        category: 2
     },
     {
         id : 10, 
@@ -256,7 +256,7 @@ const products = [
             "Creado para llevar a todas partes.",
             "Control inteligente y navegación fácil.",
         ],
-        category: "mouse"
+        category: 2
     },
 ]
 

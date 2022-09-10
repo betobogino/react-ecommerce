@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Image from 'react-bootstrap/Image';
 import { Container } from "react-bootstrap";
 import InputGroup from "react-bootstrap/InputGroup"
+import { Link } from "react-router-dom";
 
 import './Header.css';
 
@@ -15,7 +16,9 @@ const Header = () => {
             <Container>
                 <Row className="rowHeaderTop">
                     <div className="rowHeaderTop-logo">
-                        <Image src="assets/img/logo.png" alt="" className="logo"/>
+                        <Link to="/">
+                            <Image src="assets/img/logo.png" alt="" className="logo"/>
+                        </Link>
                     </div>
                     <InputGroup className="rowHeaderTop-search">
                         <Form.Control

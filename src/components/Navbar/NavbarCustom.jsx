@@ -11,14 +11,30 @@ import { Link } from 'react-router-dom';
 import './NavbarCustom.css';
 
 const linksCategories = [
-	'Teclados',
-	'Mouses',
-	'Procesadores',
-	'Notebooks',
+	{
+		id: 1,
+		name: 'Teclados',
+	},
+	{
+		id: 2,
+		name: 'Mouses',
+	},
+	{
+		id: 3,
+		name: 'Procesadores',
+	},
+	{
+		id: 4,
+		name: 'Notebooks',
+	},	
+	{
+		id: 5,
+		name: 'Placas de video',
+	}
 ];
 
 const navCategories = linksCategories.map((link, index) => {
-	return <Link className='navLink' to={"/detail/"} key={index}>{link}</Link>;
+	return <Link className='navLink' to={"/category/"+link.id} key={index}>{link.name}</Link>;
 });
 
 const linksProfile = [
