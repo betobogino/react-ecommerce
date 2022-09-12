@@ -10,14 +10,24 @@ const ItemCategoryContainer = () => {
 
   const { id } = useParams();
   
+  const toggleLoading = () => {
+    if(loading === false){
+      setLoading(true);
+    }
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }
+
   useEffect(() => {
     getProductsCategory()
-    .then((products) => {
-      setProductsCategory(products)
-      if(loading){
-        setLoading(!loading)
-      }
-    })
+    .then((products) => { setProductsCategory(products) })
+    .then(() => { if(loading) setLoading(!loading)})
+
+    return () => {
+      console.log("clean up");
+      toggleLoading();
+    }
   }, [id]);
 
   const getProductsCategory = () => {

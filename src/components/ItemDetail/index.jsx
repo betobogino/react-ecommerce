@@ -1,11 +1,19 @@
 import { Counter } from "../Counter/Counter";
+import { useState } from "react";
 
-const onAddCart = (amount) => {
-    console.log(`Agregar al cart ${amount} unidades`)
-}
 
 const ItemDetail = ({title, price, stock, imageUrl, details}) => {
-  
+  //const [amountOnCart, setAmountOnCart] = useState(0);
+
+  // const onAddCart = (amount) => {
+  //   console.log(`Agregar al cart ${amount} unidades`);
+  //   setAmountOnCart(amount);
+
+  //   if(amountOnCart === stock){
+  //     console.log("Stock limite, desaparecer")
+  //   }
+  // }
+
   return (
     <div className="itemDetail">
       <div className="itemDetailImg">
@@ -35,7 +43,8 @@ const ItemDetail = ({title, price, stock, imageUrl, details}) => {
       </div>
       <div className="itemDetailBtn">
         <p>Stock disponible: {stock}</p>
-        <Counter stock={stock} initial={1} onAdd={onAddCart}></Counter> 
+        {/* <Counter stock={stock} initial={1} onAdd={onAddCart}></Counter>  */}
+        <Counter stock={stock} initial={1}></Counter> 
       </div>         
     </div>
   )

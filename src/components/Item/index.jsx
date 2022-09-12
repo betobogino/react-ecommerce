@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const Item = ({id, price, name, urlImage}) => {
     
@@ -6,7 +6,7 @@ const Item = ({id, price, name, urlImage}) => {
         <div className='item'>
             <Link to={"/detail/"+id}>
                 <div className="itemImage">
-                    <img src={urlImage?.main} alt="" />
+                    <img src={`/${urlImage?.main}`} alt="" />
                 </div>
             </Link>
             <div className="itemInfo">
