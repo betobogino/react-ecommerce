@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { Row } from "react-bootstrap";
 import { NavbarCustom } from "../Navbar/NavbarCustom";
 
@@ -7,13 +8,19 @@ import Image from 'react-bootstrap/Image';
 import { Container } from "react-bootstrap";
 import InputGroup from "react-bootstrap/InputGroup"
 import { Link } from "react-router-dom";
+import { UserContext } from "../../context/CartContext";
 
 import './Header.css';
 
 const Header = () => {
+    const {user, loginUser, logoutUser} = useContext(UserContext);
+
     return (
         <header>
             <Container>
+                <button onClick={() => loginUser()}>Login</button>
+                <button onClick={() => logoutUser()}>Logout</button>
+                { user ? <p>Bienvenido {user}</p> : <p>Bienvenido usuario</p>}
                 <Row className="rowHeaderTop">
                     <div className="rowHeaderTop-logo">
                         <Link to="/">
