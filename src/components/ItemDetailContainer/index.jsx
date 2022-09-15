@@ -33,7 +33,7 @@ const ItemDetailContainer = () => {
     <div className="itemDetailContainer">
       {loading 
         ? <PropagateLoader color="#fff159" className="propagateLoader"/> 
-        : <ItemDetail title={details.title} price={details.price} stock={details.stock} imageUrl={details.imageUrl} details={details.details}/>
+        : <ItemDetail id={details.id} title={details.title} price={details.price} stock={details.stock} imageUrl={details.imageUrl} details={details.details}/>
       }
     </div>
   );

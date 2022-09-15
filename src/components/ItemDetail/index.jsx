@@ -1,13 +1,27 @@
 import { Counter } from "../Counter/Counter";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 
-const ItemDetail = ({title, price, stock, imageUrl, details}) => {
+const ItemDetail = ({id, title, price, stock, imageUrl, details}) => {
   const [amountOnCart, setAmountOnCart] = useState(0);
 
+  const { cartItems, addItem } = useContext(CartContext);
+  
+  console.log(cartItems)
+  
   const onAddCart = (amount) => {
     console.log(`Agregar al cart ${amount} unidades desde itemDetail`);
     setAmountOnCart(amount);
+
+    const item = {
+      id: id, 
+      name: title, 
+      price: price,
+      quantity: amount
+    }
+
+    addItem(item);
 
     if(amountOnCart === stock){
       console.log("Stock limite, desaparecer")
@@ -42,16 +56,15 @@ const ItemDetail = ({title, price, stock, imageUrl, details}) => {
         </ul>
       </div>
       <div className="itemDetailBtn">
-        <p>Stock disponible: {stock}</p>
-        {
-          amountOnCart > 0 && <p>Agregados al carrito: {amountOnCart}</p>
-        }
+        <p>Stock disponible: {stock - amountOnCart}</p>
 
+        <Counter stock={stock} initial={1} onAdd={onAddCart}></Counter>
+        <hr/>
         {
-          amountOnCart > 0 
-            ? <Link to="/cart/"><button className="btn btn-primary mt-2">Comprar</button></Link>
-            : <Counter stock={stock} initial={1} onAdd={onAddCart}></Counter>
+          amountOnCart > 0 && <span>Agregados al carrito: {amountOnCart}</span>
         }
+        <Link to="/cart/"><button className="btn btn-primary mt-2">Ir al carrito</button></Link>
+        
         {/* <Counter stock={stock} initial={1}></Counter>  */}
       </div>         
     </div>

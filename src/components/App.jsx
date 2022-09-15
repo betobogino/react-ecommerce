@@ -5,12 +5,13 @@ import ItemListContainer from '../components/ItemListContainer/';
 import ItemDetailContainer from '../components/ItemDetailContainer/';
 import ItemCategoryContainer from '../components/ItemCategoryContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { UserProvider } from '../context/CartContext';
+import { CartProvider } from '../context/CartContext';
+
 
 function App() {
   return (
     <>
-      <UserProvider value={false}>
+      <CartProvider value={false}>
         <main>  
           <BrowserRouter>
             <Header />
@@ -22,7 +23,7 @@ function App() {
             </Routes>
           </BrowserRouter>
         </main>
-      </UserProvider>
+      </CartProvider>
     </> 
   );
 }

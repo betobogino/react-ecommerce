@@ -11,11 +11,6 @@ export const Counter = ( {stock, initial, onAdd} ) => {
     
   const onAddCart = (amount) => {
     console.log(`Agregar al cart ${amount} unidades`);
-  
-    //setShowBtnBuy(true);
-    // if(amountOnCart === stock){
-    //   console.log("Stock limite, desaparecer")
-    // }
   }
 
   return (
@@ -25,7 +20,7 @@ export const Counter = ( {stock, initial, onAdd} ) => {
         <span>{count}</span>
         <button className="text-primary" onClick={() => count > 1 ? setCount(count - 1) : console.log("No puede seleccionar 0 unidades")}> - </button>
       </div>
-      <button className="btn btn-primary" onClick={() => onAdd(count)}>Agregar al carrito</button>
+      <button className="btn btn-primary" onClick={() => onAdd(count)}>Agregar</button>
       {/* {
         showBtnBuy 
           ? <Link to="/cart/"><button className="btn btn-primary mt-2" onClick={() => onBuy(count)}>Comprar</button></Link>
