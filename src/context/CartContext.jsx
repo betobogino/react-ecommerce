@@ -28,8 +28,8 @@ const CartProvider = ({ children }) => {
         }
     }   
     
-    const removeItem = () => {
-
+    const removeItem = (id) => {
+        
     }
 
     const clearCart = () => {
