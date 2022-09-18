@@ -1,5 +1,5 @@
 import { Row } from "react-bootstrap";
-import { NavbarCustom } from "../Navbar/NavbarCustom";
+import Navbar from "../Navbar/";
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -33,7 +33,7 @@ const Header = () => {
                     </div>
                 </Row>
                 <Row>
-                    <NavbarCustom />
+                    <Navbar />
                 </Row>
             </Container>
         </header>

@@ -11,21 +11,17 @@ const ItemDetail = ({id, title, price, stock, imageUrl, details}) => {
   console.log(cartItems)
   
   const onAddCart = (amount) => {
-    console.log(`Agregar al cart ${amount} unidades desde itemDetail`);
     setAmountOnCart(amount);
 
     const item = {
       id: id, 
       name: title, 
       price: price,
-      quantity: amount
+      quantity: amount,
+      img: imageUrl.main
     }
 
     addItem(item);
-
-    if(amountOnCart === stock){
-      console.log("Stock limite, desaparecer")
-    }
   }
 
   return (
@@ -56,16 +52,27 @@ const ItemDetail = ({id, title, price, stock, imageUrl, details}) => {
         </ul>
       </div>
       <div className="itemDetailBtn">
-        <p>Stock disponible: {stock - amountOnCart}</p>
-
-        <Counter stock={stock} initial={1} onAdd={onAddCart}></Counter>
-        <hr/>
         {
-          amountOnCart > 0 && <span>Agregados al carrito: {amountOnCart}</span>
+          amountOnCart === 0
+            ? <div>
+              {
+                <div>
+                  <h6>Stock disponible</h6>
+                  <span>( {stock - amountOnCart} disponibles )</span>
+                </div>  
+              }
+              <Counter stock={stock} initial={1} onAdd={onAddCart}></Counter>        
+              </div> 
+            : <div>
+                {
+                  amountOnCart === 1
+                    ? <p>Se agregó al cart {amountOnCart} unidad.</p>
+                    : <p>Se agregaron al cart {amountOnCart} unidades.</p>
+                }
+                <Link to="/cart/"><button className="btn btn-success w-100">Ir al carrito</button></Link>
+                <Link to="/"><button className="btn btn-primary w-100 mt-2">Seguir comprando</button></Link>
+              </div>   
         }
-        <Link to="/cart/"><button className="btn btn-primary mt-2">Ir al carrito</button></Link>
-        
-        {/* <Counter stock={stock} initial={1}></Counter>  */}
       </div>         
     </div>
   )

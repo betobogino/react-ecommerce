@@ -2,4 +2,5 @@ main {
     display: block;
     justify-content: center;
     background-color: #ebebeb;
+    height: 100vh;
 }

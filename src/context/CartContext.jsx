@@ -9,7 +9,7 @@ const CartProvider = ({ children }) => {
         return cartItems.find(item => item.id === Number(id))
     }
 
-    const addItem = ({id, name, price, quantity}) => {
+    const addItem = ({id, name, price, quantity, img}) => {
         const isExist = isInCart(id);
 
         if(isExist){
@@ -23,13 +23,13 @@ const CartProvider = ({ children }) => {
             setCartItems(cartItems);
         }
         else{
-            const newItem = {id: id, name: name, price: price, quantity: quantity};
+            const newItem = {id: id, name: name, price: price, quantity: quantity, img: img};
             setCartItems([...cartItems, newItem]);
         }
     }   
     
     const removeItem = (id) => {
-        
+        setCartItems(cartItems.filter(item => item.id !== id))
     }
 
     const clearCart = () => {

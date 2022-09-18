@@ -13,7 +13,7 @@ export const Counter = ( {stock, initial, onAdd} ) => {
         > 
           + 
         </button>
-        <span>{count}</span>
+        <h5>{count}</h5>
         <button 
           className="text-primary" 
           disabled={count !== 1 ? false : true}
