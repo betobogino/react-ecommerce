@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import ItemCategoryList from "../ItemCategoryList/"
 import { useParams } from "react-router-dom";
-import productsJS from "../../assets/utils/products";
 import { PropagateLoader } from "react-spinners";
+import { getProductsCategory } from "../../services/firebaseCRUD";
 
 const ItemCategoryContainer = () => {
   const [productsCategory, setProductsCategory] = useState([]);
@@ -20,23 +20,22 @@ const ItemCategoryContainer = () => {
   }
 
   useEffect(() => {
-    getProductsCategory()
+    getProductsCategory(Number(id))
     .then((products) => { setProductsCategory(products) })
     .then(() => { if(loading) setLoading(!loading)})
 
     return () => {
-      console.log("clean up");
       toggleLoading();
     }
   }, [id]);
 
-  const getProductsCategory = () => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(productsJS.filter((product) => product.category === Number(id)))
-      }, 2000)
-    })     
-  }
+  // const getProductsCategory = () => {
+  //   return new Promise((resolve) => {
+  //     setTimeout(() => {
+  //       resolve(productsJS.filter((product) => product.category === Number(id)))
+  //     }, 2000)
+  //   })     
+  // }
   
   return (
     <div className="itemList">

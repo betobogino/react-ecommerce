@@ -4,9 +4,14 @@ const ItemCategoryList = ({products}) => {
 
   return(
     <div className='itemList'>
-      {products.map((product) => {
-        return <Item key={product.id} name={product.title} price={product.price} urlImage={product.imageUrl} id={product.id}/>
-      })}
+      {
+        products.docs.map(doc => {
+          const idProduct = doc.id;
+          const data = doc.data();
+          
+          return <Item key={idProduct} name={data.title} price={data.price} urlImage={data.imageUrl} id={doc.id}/>
+        })
+      }
     </div>
   );
 

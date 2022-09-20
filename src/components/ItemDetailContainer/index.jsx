@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-import ItemDetail from "../ItemDetail/";
-import productsJS from "../../assets/utils/products.js";
+import ItemDetail from '../ItemDetail/';
+
 import "./index.css"
-import { PropagateLoader } from "react-spinners";
+import { PropagateLoader } from 'react-spinners';
+import { getProduct } from '../../services/firebaseCRUD';
 
 const ItemDetailContainer = () => {
   const [details, setDetails] = useState([{}]);
@@ -13,21 +14,12 @@ const ItemDetailContainer = () => {
   const {id} = useParams();
   
   useEffect(() => {
-    getProductDetail()
-      .then((productDetail) => {
-        setDetails(productDetail)
-        setLoading(!loading)
-      })
-      .catch((err) => console.error(err))
+    getProduct(id)
+    .then(details => {
+      setDetails(details.data())
+      setLoading(!loading)
+    });
   }, []);
-  
-  const getProductDetail = () => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(productsJS.find((product) => product.id === Number(id)))
-      }, 2000)
-    })
-  }
   
   return (
     <div className="itemDetailContainer">

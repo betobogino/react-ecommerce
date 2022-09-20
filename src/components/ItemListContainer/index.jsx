@@ -1,38 +1,42 @@
 import './ItemListContainer.css';
 import ItemList from '../ItemList/';
-import productsJS from '../../assets/utils/products'
 import { useState, useEffect } from 'react';
-import { PropagateLoader } from "react-spinners";
+import { PropagateLoader } from 'react-spinners';
+
+import { getProducts } from '../../services/firebaseCRUD';
 
 const ItemListContainer = () => {
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    const getProducts = () => {
-        return new Promise((resolve) => {
-          setTimeout(() => {
-            resolve(productsJS)
-          }, 2000)
-        })
-    }
+  useEffect(() => {
+    const colProducts = getProducts();
+    const productsState = [];
 
-    useEffect(() => {
-        getProducts()
-            .then(data => {
-                setProducts(data)
-                setLoading(!loading)
-            })    
-    }, []);
+    colProducts.then(products => {
+      products.forEach(product => {
+        const productAux = {
+          id: product.id,
+          data: product.data()
+        }
+        
+        productsState.push(productAux)
+      })
+      
+      setProducts(productsState);
+      setLoading(!loading)
+    })
+  }, []);
 
-    return (
-        <div className="itemListContainer">
-            {
-            loading 
-                ? <PropagateLoader color="#fff159" className="propagateLoader"/>
-                : <ItemList products={products}/>
-            }
-        </div>
-    );
+  return (
+    <div className="itemListContainer">
+      {
+      loading 
+        ? <PropagateLoader color="#fff159" className="propagateLoader"/>
+        : <ItemList products={products}/>
+      }
+    </div>
+  );
 }
 
 export default ItemListContainer;

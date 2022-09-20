@@ -6,8 +6,15 @@ import ItemDetailContainer from '../components/ItemDetailContainer/';
 import ItemCategoryContainer from '../components/ItemCategoryContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartProvider } from '../context/CartContext';
+/*
+//Para insertar los productos en firebase lei el archivo js que ya tenia e itere para ejecutar la funcion que impletente en el archivo CRUD de firebase
+import { addProducts } from '../services/firebaseCRUD';
+import products from '../assets/utils/products';
 
-
+products.forEach(product => {
+  addProducts(product);  
+});
+*/
 function App() {
   return (
     <>
