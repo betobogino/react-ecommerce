@@ -6,19 +6,19 @@ import { CartContext } from "../../context/CartContext";
 const ItemDetail = ({id, title, price, stock, imageUrl, details}) => {
   const [amountOnCart, setAmountOnCart] = useState(0);
 
-  const { cartItems, addItem } = useContext(CartContext);
-    
+  const { addItem } = useContext(CartContext);
+  
   const onAddCart = (amount) => {
     setAmountOnCart(amount);
 
     const item = {
       id: id, 
-      name: title, 
+      title: title, 
       price: price,
       quantity: amount,
-      img: imageUrl.main
+      img: imageUrl
     }
-
+    
     addItem(item);
   }
 

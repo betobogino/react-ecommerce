@@ -8,15 +8,27 @@ import { PropagateLoader } from 'react-spinners';
 import { getProduct } from '../../services/firebaseCRUD';
 
 const ItemDetailContainer = () => {
-  const [details, setDetails] = useState([{}]);
+  const [details, setDetails] = useState({});
   const [loading, setLoading] = useState(true);
 
   const {id} = useParams();
   
   useEffect(() => {
+    const productsState = [];
     getProduct(id)
-    .then(details => {
-      setDetails(details.data())
+    .then(detail => {
+      const productAux = {
+        id: detail.id,
+        title: detail.data().title,
+        price: detail.data().price,
+        img: detail.data().imageUrl,
+        stock: detail.data().stock,
+        details: detail.data().details
+      }
+      
+      productsState.push(productAux)
+      
+      setDetails(productAux)
       setLoading(!loading)
     });
   }, []);
@@ -25,7 +37,7 @@ const ItemDetailContainer = () => {
     <div className="itemDetailContainer">
       {loading 
         ? <PropagateLoader color="#fff159" className="propagateLoader"/> 
-        : <ItemDetail id={details.id} title={details.title} price={details.price} stock={details.stock} imageUrl={details.imageUrl} details={details.details}/>
+        : <ItemDetail id={details.id} title={details.title} price={details.price} stock={details.stock} imageUrl={details.img} details={details.details}/>
       }
     </div>
   );

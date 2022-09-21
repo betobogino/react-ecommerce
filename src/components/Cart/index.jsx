@@ -26,10 +26,10 @@ const Cart = () => {
             return (
                 <div key={item.id} className="cartItem">
                   <div>
-                    <img src={"../"+item.img} alt=""></img>
+                    <img src={"../"+item.img.main} alt=""></img>
                   </div>
                   <div>
-                    <p>{item.name}</p>
+                    <p>{item.title}</p>
                   </div>
                   <div>
                     <p>{item.quantity}</p>

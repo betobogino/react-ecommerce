@@ -8,14 +8,14 @@ const CartProvider = ({ children }) => {
   const isInCart = (id) => {
       return cartItems.find(item => item.id === Number(id))
   }
-
-  const addItem = ({id, name, price, quantity, img}) => {
+  
+  const addItem = ({id, title, price, quantity, img}) => {  
     const isExist = isInCart(id);
 
     if(isExist){
       cartItems.map((item) => {
         if(item.id === id){
-          item.quantity = quantity;
+          item.quantity += quantity;
         }
           
         return cartItems;
@@ -23,7 +23,7 @@ const CartProvider = ({ children }) => {
       setCartItems(cartItems);
     }
     else{
-      const newItem = {id: id, name: name, price: price, quantity: quantity, img: img};
+      const newItem = {id: id, title: title, price: price, img: img, quantity: quantity};
       setCartItems([...cartItems, newItem]);
     }
   }   
