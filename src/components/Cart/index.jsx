@@ -6,17 +6,18 @@ import { IconWidgetDelete } from '../IconWidget/IconWidgetDelete';
 import './index.css'
 
 const Cart = () => {
-  const { cartItems, clearCart, removeItem } = useContext(CartContext);
+  const { cartItems, clearCart, removeItem, cartTotal } = useContext(CartContext);
   
-  const calculateTotal = () => {
-    let total = 0
-    cartItems.map(item => {
-      total = total + item.price * item.quantity
-    })
-    return total
-  }
+  // const calculateTotal = () => {
+  //   let total = 0
+  //   cartItems.map(item => {
+  //     total = total + item.price * item.quantity
+  //   })
+  //   return total
+  // }
 
   return (
+    <div className='cartContainer'>
     <div className='cart'>
       <div className='cartItemsContainer'>
       {
@@ -54,11 +55,14 @@ const Cart = () => {
         Object.keys(cartItems).length >= 1
           &&
             <div className='cartTotal'>
-              <h5>Total ${calculateTotal().toFixed(2)}</h5>
-              <button className='btn btn-primary ms-2'>Terminar compra</button>
-              <button className='btn btn-danger ms-2' onClick={() => clearCart()}>Vaciar carrito</button>
+              <button className='btn btn-danger ms-2 btnDeleteCart' onClick={() => clearCart()}>Vaciar carrito</button>
+              <h5>Total ${cartTotal().toFixed(2)}</h5>
+              <Link to="/checkout">
+                <button className='btn btn-primary ms-2'>Continuar compra</button>
+              </Link>
             </div>  
       }
+    </div>
     </div>
   );
 }

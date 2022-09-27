@@ -48,4 +48,9 @@
     justify-content: flex-end;
     align-items: center;
     padding: .5rem;
+    position: relative;
+}
+.btnDeleteCart {
+    position: absolute;
+    left: 0;
 }
