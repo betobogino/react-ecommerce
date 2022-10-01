@@ -11,10 +11,17 @@ const ItemDetail = ({id, title, price, stock, imageUrl, details}) => {
   const onAddCart = (amount) => {
     setAmountOnCart(amount);
 
+    // const item = {
+    //   id: id, 
+    //   title: title, 
+    //   price: price,
+    //   quantity: amount,
+    //   img: imageUrl
+    // }
     const item = {
-      id: id, 
-      title: title, 
-      price: price,
+      id, 
+      title, 
+      price,
       quantity: amount,
       img: imageUrl
     }

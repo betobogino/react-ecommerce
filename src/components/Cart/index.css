@@ -4,7 +4,15 @@
     justify-content: space-between;
     margin: 2rem 3rem;
     background-color: #fff;
-    height: 75%;
+    min-height: 75vh;
+}
+.cartEmpty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem 3rem;
+    background-color: #fff;
+    min-height: 75vh;
 }
 .cartItemsContainer {
     height: 100%;
@@ -21,6 +29,7 @@
 }
 .cartItem div img {
     width: 100px !important;
+    max-height: 100px;
 }
 .cartItem div:nth-child(1) {
     width: 15%;

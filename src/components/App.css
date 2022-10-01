@@ -9,7 +9,7 @@ header {
     display: block;
     justify-content: center;
     background-color: #ebebeb;
-    height: 75vh;
+    min-height: 75vh;
     overflow-y: auto;
 }
 .checkout {
@@ -27,8 +27,8 @@ header {
     height: 25px;
     background-color: #2e2e28;
     color: whitesmoke;
-    position: absolute;
-    bottom: 0;
+    /* position: absolute;
+    bottom: 0; */
     height: 10vh;
     text-align: center;
     font-size: .9rem;
@@ -52,4 +52,12 @@ header {
 .footerIcon a {
     text-decoration: none;
     color: white;
+}
+.loader {
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: 75vh !important;
 }

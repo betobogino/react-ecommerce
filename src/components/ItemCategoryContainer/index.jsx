@@ -41,7 +41,7 @@ const ItemCategoryContainer = () => {
     <div className="itemList">
       {
         loading 
-          ? <PropagateLoader color="#fff159" className="propagateLoader"/>
+          ? <PropagateLoader color="#fff159" className="loader"/>
           : <ItemCategoryList products={productsCategory}/>
       }
     </div>

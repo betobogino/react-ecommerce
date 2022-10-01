@@ -3,20 +3,19 @@ import { Link } from 'react-router-dom';
 
 import { IconWidgetCart } from '../IconWidget/IconWidgetCart';
 import { IconWidgetBell } from '../IconWidget/IconWidgetBell';
-import { AddressSend } from '../AddressSend/AddressSend';
 
 import './index.css';
 import { CartContext } from '../../context/CartContext';
 
-
 const Navbar = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, quantityItems } = useContext(CartContext);
   
-  let totalQuantity = 0
+  // let totalQuantity = 0
 
-  for (const item of cartItems) {
-    totalQuantity = totalQuantity + item.quantity
-  }
+  // for (const item of cartItems) {
+  //   //totalQuantity = totalQuantity + item.quantity
+  //   totalQuantity += item.quantity
+  // }
 
 	return (
     <nav className="navbar navbar-expand-lg">
@@ -53,7 +52,7 @@ const Navbar = () => {
                   Object.keys(cartItems).length > 0 
                     &&
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                      { totalQuantity }
+                      { quantityItems() }
                       <span className="visually-hidden">Productos en el carrito</span>
                     </span>  
                 }

@@ -36,7 +36,7 @@ const ItemDetailContainer = () => {
   return (
     <div className="itemDetailContainer">
       {loading 
-        ? <PropagateLoader color="#fff159" className="propagateLoader"/> 
+        ? <PropagateLoader color="#fff159" className="loader"/> 
         : <ItemDetail id={details.id} title={details.title} price={details.price} stock={details.stock} imageUrl={details.img} details={details.details}/>
       }
     </div>
