@@ -16,6 +16,3 @@ Carrito
 ![Imgur](https://firebasestorage.googleapis.com/v0/b/react-ecommerce-fd580.appspot.com/o/capture04.png?alt=media&token=78032425-07fa-4047-bb33-db4d3106a0a2)
 Formulario de confimacion
 ![Imgur](https://firebasestorage.googleapis.com/v0/b/react-ecommerce-fd580.appspot.com/o/capture05.png?alt=media&token=93531cc6-3ed2-46ca-9cf7-ff0b80a8a9d7)
-
-# Teconlogias usadas
-
