@@ -2,22 +2,16 @@ import { Counter } from "../Counter/Counter";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
+import Swal from "sweetalert2";
 
 const ItemDetail = ({id, title, price, stock, imageUrl, details}) => {
   const [amountOnCart, setAmountOnCart] = useState(0);
-
-  const { addItem } = useContext(CartContext);
   
+  const { addItem } = useContext(CartContext);
+
   const onAddCart = (amount) => {
     setAmountOnCart(amount);
 
-    // const item = {
-    //   id: id, 
-    //   title: title, 
-    //   price: price,
-    //   quantity: amount,
-    //   img: imageUrl
-    // }
     const item = {
       id, 
       title, 
@@ -27,6 +21,14 @@ const ItemDetail = ({id, title, price, stock, imageUrl, details}) => {
     }
     
     addItem(item);
+
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Se agrego exitosamente el producto al carrito',
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
 
   return (
@@ -47,7 +49,7 @@ const ItemDetail = ({id, title, price, stock, imageUrl, details}) => {
         </div>
         <div>
           <div>
-            <span className="">${price}</span> 
+            <span>${price}</span> 
           </div>
         </div>
         <ul>
@@ -58,15 +60,15 @@ const ItemDetail = ({id, title, price, stock, imageUrl, details}) => {
       </div>
       <div className="itemDetailBtn">
         {
-          amountOnCart === 0
+          amountOnCart === 0 
             ? <div>
-              {
-                <div>
-                  <h6>Stock disponible</h6>
-                  <span>( {stock - amountOnCart} disponibles )</span>
-                </div>  
-              }
-              <Counter stock={stock} initial={1} onAdd={onAddCart}></Counter>        
+                {
+                  <div>
+                    <h6>Stock disponible</h6>
+                    <span>( {stock - amountOnCart} disponibles )</span>
+                  </div>  
+                }
+                <Counter stock={stock} initial={1} onAdd={onAddCart}></Counter>        
               </div> 
             : <div>
                 {

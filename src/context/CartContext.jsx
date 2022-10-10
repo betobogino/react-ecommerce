@@ -47,13 +47,12 @@ const CartProvider = ({ children }) => {
     for (const item of cartItems) {
       totalQuantity += item.quantity
     }
-    console.log("totalQuantity: ",totalQuantity)
     return totalQuantity;
   }
 
   return (
     <>
-      <CartContext.Provider value={{cartItems, addItem, removeItem, clearCart, isInCart, cartTotal, quantityItems}}>
+      <CartContext.Provider value={{cartItems, addItem, removeItem, clearCart, isInCart, cartTotal, quantityItems, setCartItems}}>
           {children}
       </CartContext.Provider>
     </>

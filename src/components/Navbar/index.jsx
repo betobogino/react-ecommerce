@@ -9,13 +9,6 @@ import { CartContext } from '../../context/CartContext';
 
 const Navbar = () => {
   const { cartItems, quantityItems } = useContext(CartContext);
-  
-  // let totalQuantity = 0
-
-  // for (const item of cartItems) {
-  //   //totalQuantity = totalQuantity + item.quantity
-  //   totalQuantity += item.quantity
-  // }
 
 	return (
     <nav className="navbar navbar-expand-lg">

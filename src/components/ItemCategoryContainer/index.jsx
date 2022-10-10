@@ -28,14 +28,6 @@ const ItemCategoryContainer = () => {
       toggleLoading();
     }
   }, [id]);
-
-  // const getProductsCategory = () => {
-  //   return new Promise((resolve) => {
-  //     setTimeout(() => {
-  //       resolve(productsJS.filter((product) => product.category === Number(id)))
-  //     }, 2000)
-  //   })     
-  // }
   
   return (
     <div className="itemList">

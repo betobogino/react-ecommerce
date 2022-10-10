@@ -1,6 +1,5 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, doc, addDoc, getDocs, getDoc, query, where } from "firebase/firestore";
-
 import { firebaseConfig } from './firebaseConfig';
 
 // Initialize Firebase
@@ -11,7 +10,8 @@ const db = getFirestore(app);
 
 export const addProducts = async ({title, price, imageUrl, brand, model, description, stock, details, category}) => {
   try {
-    const docRef = await addDoc(collection(db, "products"), {
+    //const docRef = await addDoc(collection(db, "products"), {
+    await addDoc(collection(db, "products"), {
       title: title,
       price: price,
       imageUrl: imageUrl,
@@ -22,7 +22,6 @@ export const addProducts = async ({title, price, imageUrl, brand, model, descrip
       details: details,
       category: category      
     });
-    console.log("Document written with ID: ", docRef.id);
   } catch (e) {
     console.error("Error adding document: ", e);
   }
@@ -50,7 +49,8 @@ export const getProductsCategory = async (idCategory) => {
 export const addOrder = async (data) => {
   try {
     const docRef = await addDoc(collection(db, "orders"), data);
-    console.log("Document written with ID: ", docRef.id);
+
+    return docRef;
   } catch(error) {
     console.error(error)
   }

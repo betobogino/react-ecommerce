@@ -8,20 +8,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartProvider } from '../context/CartContext';
 import Checkout from './Checkout';
 import Footer from './Footer';
-/*
-//Para insertar los productos en firebase lei el archivo js que ya tenia e itere para ejecutar la funcion que impletente en el archivo CRUD de firebase
-import { addProducts } from '../services/firebaseCRUD';
-import products from '../assets/utils/products';
 
-products.forEach(product => {
-  addProducts(product);  
-});
-*/
 function App() {
   return (
     <>
       <CartProvider value={false}>
-        {/* <main>   */}
           <BrowserRouter>
             <Header />
             <Routes>
@@ -33,7 +24,6 @@ function App() {
             </Routes>
             <Footer />
           </BrowserRouter>
-        {/* </main> */}
       </CartProvider>
     </> 
   );
